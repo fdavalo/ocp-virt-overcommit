@@ -24,7 +24,7 @@ cpuAllocationRatio defaults to 10 but can be changed in the CR.
             metadata:
             -   name: cluster
             spec:
-               **cpuRequestToLimitPercent: 15**
+               cpuRequestToLimitPercent: 15
 
  * Label your namespace to be handled by the operator
 
@@ -33,7 +33,7 @@ cpuAllocationRatio defaults to 10 but can be changed in the CR.
             metadata:
               name: nico-demo-vm
               labels:
-                **clusterresourceoverrides.admission.autoscaling.openshift.io/enabled: 'true'**
+                clusterresourceoverrides.admission.autoscaling.openshift.io/enabled: 'true'
               ...
   
  * When you specify a limit on your Virtual Machine, the cpu resource request will be changed according to the ratio (here 15%) in the virtual launcher pod associated with the VM
